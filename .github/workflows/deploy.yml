@@ -54,4 +54,3 @@ jobs:
         kubectl apply -f eks/ingress-nginx.yaml
         kubectl apply -f eks/ingress-http.yaml
         kubectl apply -f eks/ingress-grpc.yaml
-

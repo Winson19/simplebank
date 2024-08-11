@@ -42,6 +42,12 @@ sqlc:
 test:
 	go test -v -cover -short ./...
 
+deps:
+	go mod download
+
+build:
+	go build -o simplebank main.go
+
 server:
 	go run main.go
 

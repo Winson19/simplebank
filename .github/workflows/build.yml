@@ -1,0 +1,31 @@
+name: CI Build Configuration
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build Configuration
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Go 1.x
+      uses: actions/setup-go@v2
+      with:
+        go-version: '^1.22'
+
+    - name: Install dependencies
+      run: make deps
+
+    - name: Build
+      run: make build
+      
+
+
+

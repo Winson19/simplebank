@@ -1,11 +1,20 @@
-apiVersion: v1 
-kind: ConfigMap 
-metadata: 
-  name: aws-auth 
-  namespace: kube-system 
-data: 
-  mapUsers: | 
-    - userarn: arn:aws:iam::760486049168:user/github-ci
-      username: github-ci
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles: |
+    - rolearn: arn:aws:iam::783764592295:role/SimpleBank
+      username: SimpleBank
+      groups:
+        - system:masters
+    - rolearn: arn:aws:iam::783764592295:role/ecsInstanceRole
+      username: ecsInstance
+      groups:
+        - system:masters
+  mapUsers: |
+    - userarn: arn:aws:iam::783764592295:user/WinSing
+      username: WinSing
       groups:
         - system:masters

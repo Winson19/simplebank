@@ -23,3 +23,9 @@ spec:
           name: http-server
         - containerPort: 9090
           name: grpc-server
+        env:
+        - name: DB_DSN
+          value: "postgres://root:secret@172.18.0.2:5432/simple_bank"
+        - name: REDIS_ADDR
+          value: "redis://redis:6379"
+        
